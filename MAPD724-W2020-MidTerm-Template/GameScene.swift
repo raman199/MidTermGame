@@ -1,3 +1,8 @@
+// Source file name: GameScene.swift,
+// Author’s name(s) : Ramandeep Kaur,
+// Student Number(s) : 301088232
+// Test Date: 19 feb 2020
+
 
 import UIKit
 import AVFoundation
@@ -32,17 +37,18 @@ class GameScene: SKScene {
         self.name = "GAME"
         
         // add ocean
-        self.oceanSprite1 = Ocean()
-        self.oceanSprite1?.position = CGPoint(x: 0, y: 1864.67)
-        self.addChild(oceanSprite1!)
+//        self.oceanSprite1 = Ocean()
+//        self.oceanSprite1?.position = CGPoint(x: 0, y: -1864.67)
+//        self.addChild(oceanSprite1!)
         
         self.oceanSprite2 = Ocean()
         self.oceanSprite2?.position = CGPoint(x: 0, y: 177)
+        self.oceanSprite2?.size = CGSize(width: 4000, height: 4000)
         self.addChild(oceanSprite2!)
         
         // add plane
         self.planeSprite = Plane()
-        self.planeSprite?.position = CGPoint(x: 0, y: -575)
+        self.planeSprite?.position = CGPoint(x: -250, y: -100)
         self.addChild(planeSprite!)
         
         // add island
@@ -50,7 +56,7 @@ class GameScene: SKScene {
         self.addChild(islandSprite!)
         
         // add clouds
-        for index in 0...3
+        for index in 0...0
         {
             let cloud: Cloud = Cloud()
             cloudSprites.append(cloud)
@@ -78,17 +84,17 @@ class GameScene: SKScene {
     
     func touchDown(atPoint pos : CGPoint)
     {
-        self.planeSprite?.TouchMove(newPos: CGPoint(x: pos.x, y: -575))
+        self.planeSprite?.TouchMove(newPos: CGPoint(x: -250, y: pos.y))
     }
     
     func touchMoved(toPoint pos : CGPoint)
     {
-        self.planeSprite?.TouchMove(newPos: CGPoint(x: pos.x, y: -575))
+        self.planeSprite?.TouchMove(newPos: CGPoint(x: -250, y: pos.y))
     }
     
     func touchUp(atPoint pos : CGPoint)
     {
-        self.planeSprite?.TouchMove(newPos: CGPoint(x: pos.x, y: -575))
+        self.planeSprite?.TouchMove(newPos: CGPoint(x: -250, y: pos.y))
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
@@ -114,7 +120,7 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval)
     {
-        self.oceanSprite1?.Update()
+      //  self.oceanSprite1?.Update()
         self.oceanSprite2?.Update()
         
         self.planeSprite?.Update()
