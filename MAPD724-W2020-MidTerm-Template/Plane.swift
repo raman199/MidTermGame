@@ -1,3 +1,9 @@
+// Source file name: Plane.swift,
+// Author’s name(s) : Ramandeep Kaur,
+// Student Number(s) : 301088232
+// Test Date: 19 feb 2020
+
+
 import SpriteKit
 
 class Plane: GameObject

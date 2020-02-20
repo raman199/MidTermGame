@@ -1,3 +1,9 @@
+// Source file name: EndScene.swift,
+// Author’s name(s) : Ramandeep Kaur,
+// Student Number(s) : 301088232
+// Test Date: 19 feb 2020
+
+
 
 import UIKit
 import AVFoundation
@@ -19,14 +25,12 @@ class EndScene: SKScene {
         self.name = "END"
         
         // add ocean
-//        self.oceanSprite1 = Ocean()
-//        self.oceanSprite1?.position = CGPoint(x: 0, y: 1864.67)
-//        self.addChild(oceanSprite1!)
+        self.oceanSprite1 = Ocean()
+        self.oceanSprite1?.position = CGPoint(x: 0, y: 1864.67)
+        self.addChild(oceanSprite1!)
         
         self.oceanSprite2 = Ocean()
         self.oceanSprite2?.position = CGPoint(x: 0, y: 177)
-        self.oceanSprite2?.size = CGSize(width: 4000, height: 4000)
-
         self.addChild(oceanSprite2!)
         
     }
@@ -70,7 +74,7 @@ class EndScene: SKScene {
     
     override func update(_ currentTime: TimeInterval)
     {
-       // self.oceanSprite1?.Update()
+        self.oceanSprite1?.Update()
         self.oceanSprite2?.Update()
     
     }
